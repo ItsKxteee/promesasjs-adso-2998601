@@ -1,21 +1,12 @@
-//funcion con async
-
-function descargarArchivo() {
+function ochoSegundos() {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve("📁 Archivo descargado con éxito")
-        }, 5000)
+            resolve("Promesa ejecutada despues de ocho segundo")
+        }, 8000)
     })
 }
-
-async function ejecutar() {
-    try {
-        console.log("⌛ Descarga en proceso")
-        const respuesta = await descargarArchivo()
-        console.log(respuesta)
-    } catch (error) {
-        console.error("❌ Error al descargar ", error)
-    }
-}
-
-ejecutar()
+console.log(ochoSegundos()
+    .then((resultado) => {
+        console.log(resultado)
+    })
+)
